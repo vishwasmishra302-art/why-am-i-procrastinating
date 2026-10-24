@@ -3,15 +3,16 @@
 #   pip install -r requirements.txt
 
 # Data manipulation
-pandas>=2.0.0
-numpy>=1.24.0
+pandas>=2.0.0,<3.0.0
+# PINNED: NumPy 2.x breaks SHAP 0.46 colour module on Streamlit Cloud (Python 3.14).
+numpy>=1.24.0,<2.0.0
 
 # Machine learning
-scikit-learn>=1.3.0
-xgboost>=2.0.0
+scikit-learn>=1.3.0,<2.0.0
+xgboost>=2.0.0,<3.0.0
 
 # Explainability
-# PINNED: shap>=0.47 pulls in numba+llvmlite which break on Python 3.9 + NumPy 2.x.
+# PINNED: shap>=0.47 pulls in numba+llvmlite which break with NumPy 2.x.
 # Do NOT upgrade beyond 0.46.x.
 shap>=0.46.0,<0.47.0
 
