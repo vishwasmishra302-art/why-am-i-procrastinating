@@ -1,30 +1,28 @@
 # ── Why Am I Procrastinating? ─────────────────────────────────────────────────
-# Python dependencies — install with:
-#   pip install -r requirements.txt
+# IMPORTANT: These versions are PINNED to match the local training environment
+# exactly. The .pkl model files were serialised with these versions.
+# Changing versions (especially sklearn, numpy, xgboost) can break pickle loading.
 
 # Data manipulation
-pandas>=2.0.0,<3.0.0
-# PINNED: NumPy 2.x breaks SHAP 0.46 colour module on Streamlit Cloud (Python 3.14).
-numpy>=1.24.0,<2.0.0
+pandas==2.3.3
+numpy==2.0.2
 
-# Machine learning
-scikit-learn>=1.3.0,<2.0.0
-xgboost>=2.0.0,<3.0.0
+# Machine learning — MUST match training environment exactly (pickle compat)
+scikit-learn==1.6.1
+xgboost==2.1.4
 
-# Explainability
-# PINNED: shap>=0.47 pulls in numba+llvmlite which break with NumPy 2.x.
-# Do NOT upgrade beyond 0.46.x.
-shap>=0.46.0,<0.47.0
+# Explainability — PINNED: 0.47+ breaks with numpy 2.x on some platforms
+shap==0.46.0
 
 # Model persistence
-joblib>=1.3.0
+joblib==1.5.3
 
 # Visualisation
 matplotlib>=3.7.0
-seaborn>=0.12.0
+seaborn==0.13.2
 
 # Interactive visualisation (Streamlit app)
-plotly>=5.18.0
+plotly==7.1.0
 
 # Web application
 streamlit>=1.30.0
